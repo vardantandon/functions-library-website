@@ -22,7 +22,19 @@
 <ol>
 <li><b>quiz_start() : </b> This function has to be called before question_cloze or any other question generation function.</li>
 <li><b>quiz_end() : </b> This function has to be called after the last question_cloze or any other question generation function.</li>
-<li></li> 
+<li><b>question_cloze(num, nameStr, questionStr, generalFeedbackStr) : </b>
+Produces string output for a Cloze type question.<br> <b>Input parameters</b><br>
+<b>num -</b> number: Question Number<br>
+<b>nameStr -</b> string: Question Name<br>
+<b>questionStr</b> - string: The content of the question, including output from cloze_mcq/cloze_numerical/cloze_short<br>
+<b>generalFeedbackStr -</b> Feedback shown to student after question is
+completed
+<li><b>cloze_mcq(questionType, correctNo, varargin) : </b> Produces code to embed an multiple choice answer inside a Cloze type q</li>
+<li><b>cloze_short(questionType, correctNo, varargin) : </b> Produces code to embed a short answer inside a Cloze type q</li>
+<li><b>cloze_numerical(questionType, correctNo, varargin) : </b> Produces code to embed a numerical answer inside a Cloze type q</li>
+
+
+</li> 
 
 
 
@@ -34,3 +46,4 @@
 </body>
 
 </html>
+\
