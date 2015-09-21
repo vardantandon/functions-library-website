@@ -24,13 +24,18 @@
 
 <li><b>quiz_end() : </b> This function has to be called after the last question_cloze or any other question generation function.</li><br>
 
-<li><b>question_cloze(num, nameStr, questionStr, generalFeedbackStr) : </b>
+<li><b>question_cloze(num, nameStr, questionStr, generalFeedbackStr, hint1, hint2, fileStrQuestion, fileStrFeedback) : </b>
 Produces string output for a Cloze type question.<br> <b>Input parameters</b><br>
 <b>num -</b> number: Question Number<br>
 <b>nameStr -</b> string: Question Name<br>
-<b>questionStr</b> - string: The content of the question, including output from cloze_mcq/cloze_numerical/cloze_short<br>
+<b>questionStr -</b> string: The content of the question, including output from cloze_mcq/cloze_numerical/cloze_short<br>
 <b>generalFeedbackStr -</b> Feedback shown to student after question is
-completed</li><br>
+completed<br>
+<b>hint1 -</b> string: hint for the first incorrect attempt<br>
+<b>hint2 -</b> string: hint for the second incorrect attempt<br>
+<b>fileStrQuestion -</b> string: xml code that contains a file (eg an image) for the question section<br>
+<b>fileStrFeedback -</b> string: xml code that contains a file (eg an image) for the feedback section
+</li><br>
 
 <li><b>cloze_mcq(questionType, correctNo, varargin) : </b> Produces code to embed an multiple choice answer inside a Cloze type q.<br><b>Input parameters</b><br>
 <b>questionType -</b> 'drop', 'vertical', 'horizontal'<br>
@@ -63,6 +68,15 @@ Produces code to embed an image/plot within a question.<br><b>Input parameters</
 <b>arror(varargin) : </b>
 Draws a line with an arrowhead and any other properties , if needed like length , start and end points etc.
 </li><br>
+
+<li>
+<b>matrix_table(matrixName, matrix) : </b>
+Matrix table code generator which produces the code for a matrix table with
+the brackets around it.<br><b>Input parameters</b><br>
+<b>matrixName -</b> string: the label for the matrix<br>
+<b>matrix -</b> 2D strings array: 2D array containing the strings for each matrix cell</li><br>
+
+
 
 </ol>                       
           
