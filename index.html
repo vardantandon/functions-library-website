@@ -11,72 +11,76 @@
 
     <title>Complex Quizzes - Library of Functions</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+<h1>Complex Quizzes</h1>
+<p>This is a demo website which contains all the useful MATLAB functions that can be taken into account while making any quizzes. </p>
+<br>
+<ol>
+<li><b>quiz_start() : </b> This function has to be called before question_cloze or any other question generation function.</li><br>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                       Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Library of Functions</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
+<li><b>quiz_end() : </b> This function has to be called after the last question_cloze or any other question generation function.</li><br>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Complex Quizzes</h1>
-                        <p>This is a demo website which contains all the useful functions that can be taken into account while making any quizzes. </p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+<li><b>question_cloze(num, nameStr, questionStr, generalFeedbackStr, hint1, hint2, fileStrQuestion, fileStrFeedback) : </b>
+Produces string output for a Cloze type question.<br> <b>Input parameters</b><br>
+<b>num -</b> number: Question Number<br>
+<b>nameStr -</b> string: Question Name<br>
+<b>questionStr -</b> string: The content of the question, including output from cloze_mcq/cloze_numerical/cloze_short<br>
+<b>generalFeedbackStr -</b> Feedback shown to student after question is
+completed<br>
+<b>hint1 -</b> string: hint for the first incorrect attempt<br>
+<b>hint2 -</b> string: hint for the second incorrect attempt<br>
+<b>fileStrQuestion -</b> string: xml code that contains a file (eg an image) for the question section<br>
+<b>fileStrFeedback -</b> string: xml code that contains a file (eg an image) for the feedback section
+</li><br>
 
-    </div>
-    <!-- /#wrapper -->
+<li><b>cloze_mcq(questionType, correctNo, varargin) : </b> Produces code to embed an multiple choice answer inside a Cloze type q.<br><b>Input parameters</b><br>
+<b>questionType -</b> 'drop', 'vertical', 'horizontal'<br>
+<b>correctNo -</b> correct option no starting with 1<br>
+<b>varargin -</b> 'Option 1', 'error message', 'Option 2', 'error message', ..
+</li><br>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<li><b>cloze_short(answer, rightFeedback, wrongFeedback) : </b> Produces code to embed a short answer inside a Cloze type q.<br><b>Input parameters</b>
+<br>
+<b>answer -</b> number: correct answer<br>
+<b>rightFeedback -</b> string: correct answer feedback<br>
+<b>wrongFeedback -</b> string: wrong answer feedback<br>
+</li><br>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<li><b>cloze_numerical(answer, error, rightFeedback, wrongFeedback) : </b> Produces code to embed a numerical answer inside a Cloze type q.<br><b>Input parameters</b><br>
+<b>answer -</b> number: correct answer<br>
+<b>error -</b> number: acceptable error<br>
+<b>rightFeedback -</b> string: correct answer feedback<br>
+<b>wrongFeedback -</b> string: wrong answer feedback<br>
+</li><br>
 
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+<li><b>generateImageString(plot, imageNameStr) : </b>
+Produces code to embed an image/plot within a question.<br><b>Input parameters</b>
+<br>
+<b>plot -</b> plot: The plot to convert<br>
+<b>imageNameStr -</b> string: name of image file
+</li><br>
 
+<li>
+<b>arror(varargin) : </b>
+Draws a line with an arrowhead and any other properties , if needed like length , start and end points etc.
+</li><br>
+
+<li>
+<b>matrix_table(matrixName, matrix) : </b>
+Matrix table code generator which produces the code for a matrix table with
+the brackets around it.<br><b>Input parameters</b><br>
+<b>matrixName -</b> string: the label for the matrix<br>
+<b>matrix -</b> 2D strings array: 2D array containing the strings for each matrix cell</li><br>
+
+
+
+</ol>                       
+          
+    
 </body>
 
 </html>
